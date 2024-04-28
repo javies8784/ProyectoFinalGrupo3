@@ -7,29 +7,27 @@
     xmlns:localVistas="clr-namespace:ProyectoG3.Vistas"
     Shell.FlyoutBehavior="Flyout">
 
-    <ShellContent         
-         ContentTemplate="{DataTemplate localVistas:Vlogin}"
-         Route="False"
-        Shell.FlyoutBehavior="Disabled"
-        
-         />    
-    
     <ShellContent
+        Title="Inicio"
+         Icon="contrato.png"
         ContentTemplate="{DataTemplate localVistas:Vprincipal}"
         Route="Vprincipal" />
 
     <ShellContent
-        Title="listado de Multa"
-        ContentTemplate="{DataTemplate localVistas:Vregistro}"
-        Route="Vregistro" />
-
-    <ShellContent
         Title="Registrar Multa"
+         Icon="anadir.png"
         ContentTemplate="{DataTemplate localVistas:VregistroMultas}"
         Route="VregistroMultas" />
+    
+    <ShellContent
+        Title="listado de Multa"
+        Icon="lista.png"
+        ContentTemplate="{DataTemplate localVistas:Vregistro}"        
+        Route="Vregistro" />    
 
     <ShellContent
         Title="Tipos de Multa"
+         Icon="contrato.png"
         ContentTemplate="{DataTemplate localVistas:VtipoMultas}"
         Route="VtipoMultas" />
 

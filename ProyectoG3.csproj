@@ -50,7 +50,10 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\carro.jpg" />
+	  <None Remove="Resources\Images\anadir.png" />
 	  <None Remove="Resources\Images\contrato.png" />
+	  <None Remove="Resources\Images\lista.png" />
+	  <None Remove="Resources\Images\listar.png" />
 	  <None Remove="Resources\Images\menu.png" />
 	  <None Remove="Resources\Images\multa.png" />
 	</ItemGroup>

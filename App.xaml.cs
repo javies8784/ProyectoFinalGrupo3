@@ -8,11 +8,10 @@ namespace ProyectoG3
         {
             InitializeComponent();
 
-            var navigationPage = new NavigationPage(new Vlogin()); //AppShell();
+            //var navigationPage = new NavigationPage(new Vlogin()); //AppShell();
             //MainPage = new AppShell();
-            navigationPage.Background = Colors.White;
-            navigationPage.BarTextColor= Colors.White;            
-            MainPage = navigationPage;
+            MainPage = new Vistas.Vlogin();
+
         }
     }
 }

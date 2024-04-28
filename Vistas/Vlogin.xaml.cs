@@ -1,3 +1,5 @@
+using Microsoft.Maui;
+
 namespace ProyectoG3.Vistas;
 
 public partial class Vlogin : ContentPage
@@ -9,7 +11,10 @@ public partial class Vlogin : ContentPage
 
     private void btIngresar_Clicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new Vistas.Vprincipal());
+        //Navigation.PushAsync(new Vistas.Vprincipal());        
+        Application.Current.MainPage = new AppShell();
+        
+
 
     }
 

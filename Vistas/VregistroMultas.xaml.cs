@@ -13,7 +13,7 @@ public partial class VregistroMultas : ContentPage
    
 
 
-    public VregistroMultas()
+	public VregistroMultas()
 	{
 		InitializeComponent();
 	}
