@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoG3.Vistas.Vprincipal">
+
+    <ContentPage.MenuBarItems>
+        
+        <MenuBarItem Text="Menu">
+            <MenuFlyoutItem Text="Listar Multas" x:Name="listarMultas" Clicked="listarMultas_Clicked"/>
+            <MenuFlyoutItem Text="Registar Multas" x:Name="RegistrarMultas" Clicked="RegistrarMultas_Clicked"/>
+            
+            <MenuFlyoutSubItem Text="Configuraciones">
+                <MenuFlyoutItem Text="Tipos de multas"/>
+                <MenuFlyoutItem Text="Usuarios"/>
+                
+            </MenuFlyoutSubItem>
+            <MenuFlyoutSeparator />
+            <MenuFlyoutItem Text="Salir"
+                Command="{Binding ExitCommand}" />
+            
+            
+            
+        </MenuBarItem>
+        <MenuBarItem Text="Ayuda">
+            <MenuFlyoutItem Text="Acerca de app.."
+            Command="{Binding ExitCommand}" />
+        </MenuBarItem>
+        
+
+    </ContentPage.MenuBarItems>
+    
+    
+    <ScrollView>
+        <VerticalStackLayout Padding="1" >
+           
+            
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition  />
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <ImageButton x:Name="btMenu"
+                        Source="menu.png" 
+                       HeightRequest="30"                       
+                       HorizontalOptions="Start"
+                       Clicked="btMenu_Clicked"
+                       Grid.Row="0"
+                       Grid.Column="0"/>
+                
+                <Label Text="BIENVENIDO"
+                       TextColor="Black"
+                       FontFamily="Calibri (Cuerpo)"
+                       FontSize="20"
+                       FontAttributes="Bold,Italic"
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" 
+                       Grid.Row="1"
+                       Grid.Column="1"/>
+                
+            </Grid>
+
+            <Label Text="" />
+            
+            <Label Text="" />
+            <Label Text="" />
+            <Label Text="" />
+            <Label Text="Sistema de gestión de multas"
+                   TextColor="#858686"
+                   FontFamily="Calibri (Cuerpo)"
+                   FontSize="21"
+                   HorizontalOptions="Center" 
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"/>
+            
+            <Label Text="" />
+            <Label Text="" />
+            <Label Text="" />
+
+            <Image Source="multa.png" HeightRequest="90" VerticalOptions="Center" HorizontalOptions="Center"/>
+            
+            
+            <Label Text="" />
+            <Label Text="" />
+            <Label Text="" />
+            
+            
+            <Image Source="contrato.png" HeightRequest="40" VerticalOptions="End"/>
+
+
+        </VerticalStackLayout>
+       
+    </ScrollView>
+    
+   
+</ContentPage>
