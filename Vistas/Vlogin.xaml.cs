@@ -21,5 +21,10 @@ public partial class Vlogin : ContentPage
     private void btRegistrar_Clicked(object sender, EventArgs e)
     {
 
+        //var navigationPage = new NavigationPage(Vistas.VregistroMultas());
+
+
+        Application.Current.MainPage = new Vistas.VregistroMultas();
+
     }
 }

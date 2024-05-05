@@ -31,4 +31,10 @@
         ContentTemplate="{DataTemplate localVistas:VtipoMultas}"
         Route="VtipoMultas" />
 
+    <ShellContent
+        Title="Salir"
+         Icon="contrato.png"
+        ContentTemplate="{DataTemplate localVistas:Vlogin}"
+        Route="VtipoMultas" />
+
 </Shell>

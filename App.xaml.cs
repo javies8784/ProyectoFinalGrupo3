@@ -10,7 +10,7 @@ namespace ProyectoG3
 
             //var navigationPage = new NavigationPage(new Vlogin()); //AppShell();
             //MainPage = new AppShell();
-            MainPage = new Vistas.Vlogin();
+            MainPage = new Vistas.Vregistro();
 
         }
     }
