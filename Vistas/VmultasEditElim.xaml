@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProyectoG3.Vistas.VregistroMultas"
-             Title="Regisro">
-
+             x:Class="ProyectoG3.Vistas.VmultasEditElim"
+             Title="VmultasEditElim">
     <ScrollView>
-        
+
         <VerticalStackLayout Padding="20">
 
             <Label Text="REGISTRO DE MULTAS"
@@ -15,26 +14,26 @@
            FontAttributes="Bold,Italic"
            HorizontalOptions="Center" 
            VerticalOptions="Center" />
-            
-                
-        <Label Text=""/>
-        <Grid Padding="10,10,20,20" >
-            <Grid.RowDefinitions>
-                <RowDefinition  />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
 
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions >
-                <ColumnDefinition   />
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
 
-            <Label Text="N° ticket"
+            <Label Text=""/>
+            <Grid Padding="10,10,20,20" >
+                <Grid.RowDefinitions>
+                    <RowDefinition  />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition   />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="N° ticket"
                    TextColor="Black"
                    FontFamily="Calibri (Cuerpo)"
                    FontSize="12"                   
@@ -43,8 +42,8 @@
                    
                    Grid.Row="0"
                    Grid.Column="0"/>
-            
-            <Entry x:Name="txtNticket"               
+
+                <Entry x:Name="txtNticket"               
                    Placeholder=" "
                    MaxLength="12"
                    Background="#F9F9F9"
@@ -53,9 +52,9 @@
                    Grid.Row="0"
                    Grid.Column="1" 
                    WidthRequest="200" />
-            
-            <!---->
-            <Label Text="Fecha/Hora"
+
+                <!---->
+                <Label Text="Fecha/Hora"
                    TextColor="Black"
                    FontFamily="Calibri (Cuerpo)"
                    FontSize="12"                   
@@ -63,7 +62,7 @@
                    VerticalOptions="Center" 
                    Grid.Row="1"
                    Grid.Column="0"/>
-            <DatePicker x:Name="Pkfecha"
+                <DatePicker x:Name="Pkfecha"
                         Background="#F9F9F9"
                         Grid.Row="1"
                         Grid.Column="1"/>
@@ -74,7 +73,7 @@
                 Grid.Row="2"
                         Grid.Column="1"/>
                 <!---->
-            <Label Text="Tipo Multa"
+                <Label Text="Tipo Multa"
                    TextColor="Black"
                    FontFamily="Calibri (Cuerpo)"
                    FontSize="12"                   
@@ -82,19 +81,19 @@
                    VerticalOptions="Center" 
                    Grid.Row="3"
                    Grid.Column="0"/>
-            
-            <Picker x:Name="pkTiposMultas" HorizontalOptions="CenterAndExpand"  WidthRequest="200" FontSize="Body" VerticalOptions="Start" 
+
+                <Picker x:Name="pkTiposMultas" HorizontalOptions="CenterAndExpand"  WidthRequest="200" FontSize="Body" VerticalOptions="Start" 
                     Background="#F9F9F9"
                         Grid.Row="3"
                         Grid.Column="1" 
                         >
-                <Picker.Items>
-                    
-                </Picker.Items>
-            </Picker>
+                    <Picker.Items>
 
-            <!---->
-            <Label Text="N°Placa"
+                    </Picker.Items>
+                </Picker>
+
+                <!---->
+                <Label Text="N°Placa"
                    TextColor="Black"
                    FontFamily="Calibri (Cuerpo)"
                    FontSize="12"                   
@@ -102,7 +101,7 @@
                    VerticalOptions="Center" 
                    Grid.Row="4"
                    Grid.Column="0"/>
-            <Entry x:Name="txtPlaca"               
+                <Entry x:Name="txtPlaca"               
                    Placeholder=" "
                    Background="#F9F9F9"
                    HorizontalOptions="Start"
@@ -110,8 +109,8 @@
                    Grid.Column="1" 
                    WidthRequest="200" />
 
-            <!---->
-            <Button x:Name="btGPS" 
+                <!---->
+                <Button x:Name="btGPS" 
                     Text="GPS"
                     Background="#DADADA"
                     Grid.Row="5"
@@ -122,9 +121,9 @@
                    FontSize="13"
                    FontAttributes="Bold,Italic"
                     Clicked="btGPS_Clicked"/>
-            
-           
-            <Entry x:Name="txtGps"               
+
+
+                <Entry x:Name="txtGps"               
                    Placeholder=" "
                    Background="#F9F9F9"
                    HorizontalOptions="Start"
@@ -132,8 +131,8 @@
                    Grid.Column="1" 
                    WidthRequest="200" />
 
-        </Grid>
-        <Button x:Name="TomarFoto" 
+            </Grid>
+            <Button x:Name="TomarFoto" 
                     Text="Tomar Foto"
                     Background="#DADADA"
                     TextColor="Black"
@@ -142,27 +141,58 @@
                     WidthRequest="100"
                    FontAttributes="Bold,Italic"
                     Clicked="TomarFoto_Clicked"/>
-        <Label Text=""/>
-        <Image x:Name="Foto" Source="carro.jpg" HeightRequest="160" VerticalOptions="Center"/>
+            <Label Text=""/>
+            <Image x:Name="Foto" Source="carro.jpg" HeightRequest="160" VerticalOptions="Center"/>
             <Label Text=""/>
             <Label Text=""/>
-            
-            <Button x:Name="btGuardar" 
+            <Label Text=""/>
+            <Grid Padding="10,10,20,20" >
+                <Grid.RowDefinitions>
+                    <RowDefinition  />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition   />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btActualizar" 
                     Text="Guardar"
                     Background="#DADADA"
+                    Grid.Row="0"
+                    Grid.Column="0" 
                     WidthRequest="100"
                     TextColor="Black"
                     FontFamily="Calibri (Cuerpo)"
-                   FontSize="15"
+                   FontSize="13"
                    FontAttributes="Bold,Italic"
-                    Clicked="btGuardar_Clicked"/>
-        
-        
-            <Label Text=""/>
-        <Image Source="contrato.png" HeightRequest="40" VerticalOptions="End"/>
-    
-        
-    </VerticalStackLayout>    
-    </ScrollView>
+                    Clicked="btActualizar_Clicked"/>
 
+                <Button x:Name="btEliminar" 
+                    Text="Eliminar"
+                    Background="#DADADA"
+                    Grid.Row="0"
+                    Grid.Column="3" 
+                    WidthRequest="100"
+                    TextColor="Black"
+                    FontFamily="Calibri (Cuerpo)"
+                   FontSize="13"
+                   FontAttributes="Bold,Italic"
+                    Clicked="btEliminar_Clicked"/>
+
+            </Grid>
+
+
+            <Label Text=""/>
+            <Image Source="contrato.png" HeightRequest="40" VerticalOptions="End"/>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

@@ -4,9 +4,9 @@
              x:Class="ProyectoG3.Vistas.Vregistro"
              Title="Vregistro">
     <ScrollView>
-    <VerticalStackLayout Padding="20,20,20,20">
+    <VerticalStackLayout Padding="20">
         <Label 
-            Text="CONSUMO DE REST"
+            Text="REGISTRO MULTAS"
             FontSize="24"
             HorizontalOptions="Center" />
         <Label Text=""/>
@@ -28,63 +28,16 @@
                 VerticalOptions="End" />
 
 
-            <ListView x:Name="listEstudiantes"  >
-            <ListView.Header>
-                <VerticalStackLayout BackgroundColor="LightGray"  >
-                    <Grid >
-                        <Grid.ColumnDefinitions >
-                            <ColumnDefinition  />
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-                        <Border Grid.Column="0">
-                            <Label Margin="10" Text="CODIGO" VerticalOptions="Start" FontAttributes="Bold"/>
-                        </Border>
-                        <Border Grid.Column="1">
-                            <Label Margin="10" Text="NOMBRE" VerticalOptions="Center" FontAttributes="Bold"/>
-                        </Border>
-                        <Border Grid.Column="2">
-                            <Label Margin="10" Text="APELLIDO" VerticalOptions="Center" FontAttributes="Bold"/>
-                        </Border>
-                        <Border Grid.Column="3">
-                            <Label Margin="10" Text="EDAD" VerticalOptions="Center" FontAttributes="Bold"/>
-                        </Border>
-
-                    </Grid>
-                </VerticalStackLayout>
-            </ListView.Header>
+            <ListView x:Name="listRegistroMultas"   ItemSelected="listRegistroMultas_ItemSelected">
+          
             <ListView.ItemTemplate >
                 <DataTemplate>
-                    <ViewCell>
-                        <StackLayout>
-                            <Grid >
-                                <Grid.ColumnDefinitions >
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <Border Grid.Column="0" VerticalOptions="Center">
-                                    <Label x:Name="lblCodigo" Text="{Binding id}"  VerticalOptions="End"/>
-                                </Border>
-
-                                <Border  Grid.Column="1" >
-                                    <Label x:Name="lblNombre" Text="{Binding nombre}" VerticalOptions="Center"/>
-                                </Border>
-                                <Border Grid.Column="2">
-                                    <Label x:Name="lblApellido" Text="{Binding contrasena}"  VerticalOptions="Center"/>
-                                </Border>
-                                <Border Grid.Column="3">
-                                    <Label x:Name="lblEdad" Text="{Binding email}"  VerticalOptions="Center"/>
-                                </Border>
-
-                            </Grid>
-
-                        </StackLayout>
-                    </ViewCell>
-
-                </DataTemplate>
+                                <ImageCell ImageSource="{Binding imagen_base64} "
+                                           Text="{Binding text}"
+                                           Detail="{Binding detalle}" />
+                                               
+                    
+                    </DataTemplate>
             </ListView.ItemTemplate>
 
         </ListView>

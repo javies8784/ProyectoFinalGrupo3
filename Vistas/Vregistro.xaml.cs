@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using ProyectoG3.Conexion;
 using ProyectoG3.Models;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -10,33 +11,45 @@ namespace ProyectoG3.Vistas;
 
 public partial class Vregistro : ContentPage
 {
-    private const string url = "http://192.168.1.12:3300/api/usuario";
+    
+    private string ips = IP.Ipconexion();
+    //private const string url = $"http://{ip}:3300/api/registromulta";
     private readonly HttpClient cliente = new HttpClient();
-    private ObservableCollection<Usuario> usr;
+    private ObservableCollection<RegistroMultas> usr;
 
     public Vregistro()
 	{
 		InitializeComponent();
-        ObtenerDatos();
+        listardatos();
 
+
+    }
+  
+
+    public void listardatos() {
+        ObtenerDatos();
     }
 
     public async void ObtenerDatos()
     {
         
+        string url = $"{ips}/api/registromulta";
+
         var content = await cliente.GetStringAsync(url);
         
-        List<Usuario> mostrar = JsonConvert.DeserializeObject<List<Usuario>>(content);
-        usr = new ObservableCollection<Usuario>(mostrar);
+        List<RegistroMultas> mostrar1 = JsonConvert.DeserializeObject<List<RegistroMultas>>(content);
+        usr = new ObservableCollection<RegistroMultas>(mostrar1);
+        
+        //foreach (var registromultas in mostrar1)
+       // {
+         //   await DisplayAlert("Respuesta del servidor", registromultas.coordenadas, "OK");
+            //DisplayAlert("Alerta", "Cliente Insertado"+ tipoMulta, "Cerrar");
+            //pkTiposMultas.Items.Add(tipoMulta.nombre);
+            //_diccionarioIds.Add(tipoMulta.nombre, tipoMulta.id);
+        //}
 
 
-        usr.Add(new Usuario() { id = 1, nombre = "NOMBRE",contrasena="APELLIDO",email="EDAD" });
-
-
-        //groupedAnimal.Add(dogs);
-        //groupedAnimal.Add(cats);
-
-        listEstudiantes.ItemsSource = usr;
+        listRegistroMultas.ItemsSource = usr;
 
     }
 
@@ -48,7 +61,7 @@ public partial class Vregistro : ContentPage
             parametros.Add("usuario", "anita");
             parametros.Add("contrasena", "contrasena");
             parametros.Add("email", "email");
-            cliente.UploadValues("http://192.168.1.12:3300/api/usuario","POST", parametros);
+            cliente.UploadValues($"{ips}/api/usuario","POST", parametros);
             DisplayAlert("Alerta", "Cliente Insertado", "Cerrar");
 
         }
@@ -66,10 +79,13 @@ public partial class Vregistro : ContentPage
         {
             WebClient cliente = new WebClient();
             var parametros = new System.Collections.Specialized.NameValueCollection();
-            parametros.Add("id","4");
-            parametros.Add("usuario", "anita");
-            parametros.Add("contrasena", "contrasena");
-            parametros.Add("email", "email");
+            parametros.Add("fecha","" );
+            parametros.Add("tipomulta", "anita");
+            parametros.Add("numeroplaca", "contrasena");
+            parametros.Add("coordenadas", "email");
+            parametros.Add("imagen_base64", "email");
+            parametros.Add("hora", "email");
+            parametros.Add("id", "email");
             cliente.UploadValues("http://192.168.1.12:3300/api/usuario/4", "POST", parametros);
             DisplayAlert("Alerta", "Cliente Insertado", "Cerrar");
 
@@ -113,7 +129,7 @@ public partial class Vregistro : ContentPage
         try
         {
             // URL base de la API
-            string baseUrl = "http://192.168.1.12:3300/api/usuario/verificarusuario/datos";
+            string baseUrl = "http://192.168.1.24:3300/api/usuario/verificarusuario/datos";
 
             // Crear instancia de HttpClient
             HttpClient cliente = new HttpClient();
@@ -153,7 +169,11 @@ public partial class Vregistro : ContentPage
 
     private void btRegistrar_Clicked(object sender, EventArgs e)
     {
-        insertar();
+        //insertar();
+        listRegistroMultas.ItemsSource = null;
+        listRegistroMultas.SelectedItem = null;
+
+        listardatos();
 
     }
 
@@ -165,7 +185,7 @@ public partial class Vregistro : ContentPage
         try
         {
             // URL base de la API
-            string baseUrl = "http://192.168.1.12:3300/api/usuario/verificarusuario/datos";
+            string baseUrl = "http://192.168.1.24:3300/api/usuario/verificarusuario/datos";
 
             // Crear instancia de HttpClient
             HttpClient cliente = new HttpClient();
@@ -195,5 +215,13 @@ public partial class Vregistro : ContentPage
             // Manejar cualquier excepción que ocurra durante la solicitud
             await DisplayAlert("Error", ex.Message, "OK");
         }
+    }
+
+    private void listRegistroMultas_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+
+        var objRegistroMultas = (RegistroMultas)e.SelectedItem;
+        Navigation.PushAsync(new Vistas.VmultasEditElim(objRegistroMultas));
+
     }
 }

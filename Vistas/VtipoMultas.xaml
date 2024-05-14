@@ -4,32 +4,19 @@
              x:Class="ProyectoG3.Vistas.VtipoMultas"
              Title="Tipo de Multas">
     <ScrollView>
-        <VerticalStackLayout Padding="20">
-            <Grid >
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
+        <VerticalStackLayout Padding="20" Spacing="20">
 
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions >
-                    <ColumnDefinition  />
-                    <ColumnDefinition Width="200"/>
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-
-                <Label Text="REGISTRO DE TIPOS MULTAS"
+            <Label Text="REGISTRO DE TIPOS MULTAS"
            TextColor="Black"
            FontFamily="Calibri (Cuerpo)"
-           FontSize="18"
+           FontSize="15"
            FontAttributes="Bold,Italic"
            HorizontalOptions="Center" 
-           VerticalOptions="Center" 
-           Grid.Row="1"
-           Grid.Column="1"/>
+           VerticalOptions="Center" />
 
-            </Grid>
+           
             <Label Text=""/>
-            <Grid Padding="10,10,20,20" >
+            <Grid Padding="10,20,20,20" >
                 <Grid.RowDefinitions>
                     <RowDefinition  />
                     <RowDefinition />
@@ -55,13 +42,10 @@
                    Grid.Column="0"/>
 
                 <Entry x:Name="txtNnombre"               
-                   Placeholder=" "
-                   MaxLength="12"
+                   Placeholder=" "                   
                    Background="#F9F9F9"
-                   HorizontalOptions="Start"
                    Grid.Row="0"
-                   Grid.Column="1" 
-                   WidthRequest="200" />
+                   Grid.Column="1"                    />
 
                 <!---->
                 <Label Text="Observación"
@@ -74,45 +58,23 @@
                    Grid.Column="0"/>
 
                 <Entry x:Name="txtObservacion"               
-                   Placeholder=" "
-                   MaxLength="12"
-                   Background="#F9F9F9"
-                   HorizontalOptions="Start"
-                   Grid.Row="0"
+                   Placeholder=" "                  
+                   Background="#F9F9F9"                  
+                   Grid.Row="1"
                    Grid.Column="1" 
-                   WidthRequest="200" />
+                   />
             </Grid>
-            <Label Text=""/>
-            <Grid Padding="10,10,20,20" >
-                <Grid.RowDefinitions>
-                    <RowDefinition  />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions >
-                    <ColumnDefinition   />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-
-                <Button x:Name="btGuardar" 
+            <Label Text=""/>            
+            <Button x:Name="btGuardar" 
                     Text="Guardar"
                     Background="#DADADA"
-                    Grid.Row="0"
-                    Grid.Column="0" 
                     WidthRequest="100"
                     TextColor="Black"
                     FontFamily="Calibri (Cuerpo)"
                    FontSize="13"
                    FontAttributes="Bold,Italic"
                     Clicked="btGuardar_Clicked"/>
-
-
-            </Grid>
+            
 
 
             <Label Text=""/>

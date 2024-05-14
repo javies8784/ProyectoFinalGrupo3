@@ -18,12 +18,13 @@
          Icon="anadir.png"
         ContentTemplate="{DataTemplate localVistas:VregistroMultas}"
         Route="VregistroMultas" />
-    
+
     <ShellContent
         Title="listado de Multa"
         Icon="lista.png"
         ContentTemplate="{DataTemplate localVistas:Vregistro}"        
         Route="Vregistro" />    
+    
 
     <ShellContent
         Title="Tipos de Multa"

@@ -74,6 +74,9 @@
 	  <MauiXaml Update="Vistas\Vlogin.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Vistas\VmultasEditElim.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Vistas\Vprincipal.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
