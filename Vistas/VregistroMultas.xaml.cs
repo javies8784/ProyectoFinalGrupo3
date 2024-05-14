@@ -112,4 +112,8 @@ public partial class VregistroMultas : ContentPage
         }
     }
 
+    private void btGuardar_Clicked_1(object sender, EventArgs e)
+    {
+
+    }
 }

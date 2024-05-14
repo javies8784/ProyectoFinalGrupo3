@@ -45,7 +45,7 @@ public partial class Vregistro : ContentPage
         {
             WebClient cliente = new WebClient();
             var  parametros = new System.Collections.Specialized.NameValueCollection();
-            parametros.Add("nombre", "anita");
+            parametros.Add("usuario", "anita");
             parametros.Add("contrasena", "contrasena");
             parametros.Add("email", "email");
             cliente.UploadValues("http://192.168.1.12:3300/api/usuario","POST", parametros);
@@ -67,7 +67,7 @@ public partial class Vregistro : ContentPage
             WebClient cliente = new WebClient();
             var parametros = new System.Collections.Specialized.NameValueCollection();
             parametros.Add("id","4");
-            parametros.Add("nombre", "anita");
+            parametros.Add("usuario", "anita");
             parametros.Add("contrasena", "contrasena");
             parametros.Add("email", "email");
             cliente.UploadValues("http://192.168.1.12:3300/api/usuario/4", "POST", parametros);
@@ -89,7 +89,7 @@ public partial class Vregistro : ContentPage
             WebClient cliente = new WebClient();
             var parametros = new System.Collections.Specialized.NameValueCollection();
             //parametros.Add("id", "4");
-            parametros.Add("nombre", "javier");
+            parametros.Add("usuario", "javier");
             parametros.Add("contrasena", "javier");
             
             var respuesta = cliente.UploadValues("http://localhost:3300/api/usuario/verificarusuario/datos", "POST", parametros);
@@ -113,11 +113,11 @@ public partial class Vregistro : ContentPage
         try
         {
             // URL base de la API
-            string baseUrl = "http://localhost:3300/api/usuario/verificarusuario/datos";
+            string baseUrl = "http://192.168.1.12:3300/api/usuario/verificarusuario/datos";
 
             // Crear instancia de HttpClient
             HttpClient cliente = new HttpClient();
-           string parametros = "{\"nombre\":\"javier\",\"contrasena\":\"javier\"}";            
+           string parametros = "{\"usuario\":\"javier\",\"contrasena\":\"javier\"}";            
             var contenido = new StringContent(parametros, Encoding.UTF8, "application/json");
 
             // Realizar la solicitud POST
@@ -157,10 +157,43 @@ public partial class Vregistro : ContentPage
 
     }
 
-    private void btActualizar_Clicked(object sender, EventArgs e)
+    private async void btActualizar_Clicked(object sender, EventArgs e)
     {
         //buscar();
         //VerificaUsuario();
-        VerificaUsuario2();
+        //VerificaUsuario2();
+        try
+        {
+            // URL base de la API
+            string baseUrl = "http://192.168.1.12:3300/api/usuario/verificarusuario/datos";
+
+            // Crear instancia de HttpClient
+            HttpClient cliente = new HttpClient();
+            string parametros = "{\"usuario\":\"javier\",\"contrasena\":\"javier\"}";
+            var contenido = new StringContent(parametros, Encoding.UTF8, "application/json");
+
+            // Realizar la solicitud POST
+            HttpResponseMessage respuesta = await cliente.PostAsync(baseUrl, contenido);
+
+            // Verificar si la solicitud fue exitosa
+            if (respuesta.IsSuccessStatusCode)
+            {
+                // Leer el contenido de la respuesta
+                string contenidoRespuesta = await respuesta.Content.ReadAsStringAsync();
+
+                // Mostrar el resultado en un mensaje
+                await DisplayAlert("Respuesta del servidor", contenidoRespuesta, "OK");
+            }
+            else
+            {
+                // Si la solicitud no fue exitosa, mostrar un mensaje de error
+                await DisplayAlert("Error", "La solicitud no fue exitosa", "OK");
+            }
+        }
+        catch (Exception ex)
+        {
+            // Manejar cualquier excepción que ocurra durante la solicitud
+            await DisplayAlert("Error", ex.Message, "OK");
+        }
     }
 }

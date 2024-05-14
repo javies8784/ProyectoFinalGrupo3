@@ -3,10 +3,122 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoG3.Vistas.VtipoMultas"
              Title="Tipo de Multas">
-    <VerticalStackLayout>
-        <Label 
-            Text="Tipo de Multas"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition  />
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="REGISTRO DE TIPOS MULTAS"
+           TextColor="Black"
+           FontFamily="Calibri (Cuerpo)"
+           FontSize="18"
+           FontAttributes="Bold,Italic"
+           HorizontalOptions="Center" 
+           VerticalOptions="Center" 
+           Grid.Row="1"
+           Grid.Column="1"/>
+
+            </Grid>
+            <Label Text=""/>
+            <Grid Padding="10,10,20,20" >
+                <Grid.RowDefinitions>
+                    <RowDefinition  />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition   />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Nombre"
+                   TextColor="Black"
+                   FontFamily="Calibri (Cuerpo)"
+                   FontSize="12"                   
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center" 
+                   Grid.Row="0"
+                   Grid.Column="0"/>
+
+                <Entry x:Name="txtNnombre"               
+                   Placeholder=" "
+                   MaxLength="12"
+                   Background="#F9F9F9"
+                   HorizontalOptions="Start"
+                   Grid.Row="0"
+                   Grid.Column="1" 
+                   WidthRequest="200" />
+
+                <!---->
+                <Label Text="Observación"
+                   TextColor="Black"
+                   FontFamily="Calibri (Cuerpo)"
+                   FontSize="12"                   
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center" 
+                   Grid.Row="1"
+                   Grid.Column="0"/>
+
+                <Entry x:Name="txtObservacion"               
+                   Placeholder=" "
+                   MaxLength="12"
+                   Background="#F9F9F9"
+                   HorizontalOptions="Start"
+                   Grid.Row="0"
+                   Grid.Column="1" 
+                   WidthRequest="200" />
+            </Grid>
+            <Label Text=""/>
+            <Grid Padding="10,10,20,20" >
+                <Grid.RowDefinitions>
+                    <RowDefinition  />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition   />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btGuardar" 
+                    Text="Guardar"
+                    Background="#DADADA"
+                    Grid.Row="0"
+                    Grid.Column="0" 
+                    WidthRequest="100"
+                    TextColor="Black"
+                    FontFamily="Calibri (Cuerpo)"
+                   FontSize="13"
+                   FontAttributes="Bold,Italic"
+                    Clicked="btGuardar_Clicked"/>
+
+
+            </Grid>
+
+
+            <Label Text=""/>
+            <Image Source="contrato.png" HeightRequest="40" VerticalOptions="End"/>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

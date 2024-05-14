@@ -6,4 +6,9 @@ public partial class VtipoMultas : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void btGuardar_Clicked(object sender, EventArgs e)
+    {
+
+    }
 }

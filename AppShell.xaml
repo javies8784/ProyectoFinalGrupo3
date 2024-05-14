@@ -35,6 +35,6 @@
         Title="Salir"
          Icon="contrato.png"
         ContentTemplate="{DataTemplate localVistas:Vlogin}"
-        Route="VtipoMultas" />
+        Route="Vlogin" />
 
 </Shell>
