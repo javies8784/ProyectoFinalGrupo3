@@ -56,6 +56,7 @@
 	  <None Remove="Resources\Images\listar.png" />
 	  <None Remove="Resources\Images\menu.png" />
 	  <None Remove="Resources\Images\multa.png" />
+	  <None Remove="Resources\Images\salida.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -86,7 +87,13 @@
 	  <MauiXaml Update="Vistas\VregistroMultas.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Vistas\Vregistrousuario.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Vistas\VtipoMultas.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Vistas\Vusuario.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

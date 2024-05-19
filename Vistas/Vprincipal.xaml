@@ -6,8 +6,22 @@
        
     <ScrollView>
         <VerticalStackLayout Padding="1" >
-           
+
+            <Label x:Name="lblUsuario"
+                   HorizontalTextAlignment="End"
+                   HorizontalOptions="End"
+                   Text="Uisrael"
+                   TextColor="Grey"
+                   Margin="4"
+                   />
             
+            <ImageButton Source="salida.png"
+                         x:Name="btnSalir"
+                         WidthRequest="30"
+                          Clicked="btnSalir_Clicked"
+                         VerticalOptions="End"
+                         HorizontalOptions="End"/>
+
             <Grid >
                 <Grid.RowDefinitions>
                     <RowDefinition />

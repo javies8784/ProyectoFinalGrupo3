@@ -24,5 +24,27 @@ namespace ProyectoG3
             await appShell.ShellInstance.GoToAsync("//Vregistro");
         }
 
+        public static string RespuestaServidor { get; private set; }
+
+        public AppShell(string contenidoRespuesta)
+        {
+
+            InitializeComponent();
+
+
+            // Almacena la respuesta del servidor
+            RespuestaServidor = contenidoRespuesta;
+
+
+            // Navega a la página VUsuario
+
+            GoToAsync("//vusuario");
+
+
+
+
+
+        }
+
     }
 }

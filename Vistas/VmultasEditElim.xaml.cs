@@ -219,7 +219,7 @@ public partial class VmultasEditElim : ContentPage
                 Foto.Source = ImageSource.FromFile(localFilePath.ToString());
 
                 //Foto.Source(localFilePath.ToString());
-                await DisplayAlert("Respuesta del servidor", localFilePath, "OK");
+                //await DisplayAlert("Respuesta del servidor", localFilePath, "OK");
             }
         }
     }

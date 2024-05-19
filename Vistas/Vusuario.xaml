@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoG3.Vistas.Vusuario"
+             Title="Usuario">
+    
+    <ScrollView>
+    <VerticalStackLayout>
+        <Label 
+            Text="REGISTRO DE DATOS PERSONALES USUARIO"
+            VerticalOptions="Center" 
+            FontSize="20"
+            TextColor="Grey"
+            HorizontalOptions="Center" 
+            Margin="8"/>
+
+        <Entry x:Name="txtCodigo"
+               Placeholder="Codigo"
+               IsReadOnly="True"/>
+        <Entry x:Name="txtusuario"
+       Placeholder="Usuario"
+       IsReadOnly="True"/>
+
+        <Entry x:Name="txtPassword"
+       Placeholder="Paswword"
+      />
+
+        <Entry x:Name="txtCorreo"
+               Placeholder="Correo"/>
+
+        <Entry x:Name="txtNombre"
+               Placeholder="Ingrese el nombre"/>
+
+        <Entry x:Name="txtApellido"
+               Placeholder="Ingrese el apellido"/>
+
+
+        <Button x:Name="btnActualizar"
+                Text="Actualizar Usuario"
+                Clicked="btnActualizar_Clicked"
+                Margin="8"/>
+
+
+
+    </VerticalStackLayout>
+    
+    </ScrollView>
+</ContentPage>

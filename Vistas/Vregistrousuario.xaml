@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoG3.Vistas.Vregistrousuario"
+             Title="Vregistrousuario">
+    <ScrollView>
+        <VerticalStackLayout Padding="20,20,20,20" Spacing="8">
+            <Label Text="REGISTRO DE USUARIOS"
+                    TextColor="Grey"
+                    FontSize="24"
+                    HorizontalOptions="Center" 
+                    Padding="8"/>
+
+
+            <Label Text="USUARIO" />
+            <Entry x:Name="txtusuario" Placeholder="Ingrese su usuario" />
+
+            <Label Text="CONTRASEÑA" />
+            <Entry x:Name="txtcontasena" Placeholder="Ingrese su contraseña" IsPassword="True" />
+
+            <Label Text="CORREO" />
+            <Entry x:Name="txtcorreo" Placeholder="Ingrese su correo electrónico" Keyboard="Email" />
+
+            <Button x:Name="btRegistrar" 
+                    Text="REGISTRAR"
+                    TextColor="Black"
+                    BackgroundColor="LightGrey"
+                    Clicked="btRegistrar_Clicked"
+                    WidthRequest="150"
+                    VerticalOptions="End" />
+
+
+            <Button Text="back" Clicked="Button_Clicked" WidthRequest="150"
+                    VerticalOptions="End" TextColor="Black" 
+                    BackgroundColor="LightGrey" />
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>

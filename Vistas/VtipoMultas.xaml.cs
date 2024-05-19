@@ -1,10 +1,12 @@
+using ProyectoG3.Conexion;
 using System.Net;
 
 namespace ProyectoG3.Vistas;
 
 public partial class VtipoMultas : ContentPage
 {
-	public VtipoMultas()
+    private string ips = IP.Ipconexion();
+    public VtipoMultas()
 	{
 		InitializeComponent();
 	}
@@ -21,9 +23,10 @@ public partial class VtipoMultas : ContentPage
             WebClient cliente = new WebClient();
             var parametros = new System.Collections.Specialized.NameValueCollection();
             //parametros.Add("id", "anita");
+            string url = $"{ips}/api/tipomulta";
             parametros.Add("nombre", txtNnombre.Text);
             parametros.Add("obsarvacion", txtObservacion.Text);
-            cliente.UploadValues("http://192.168.1.12:3300/api/tipomulta/", "POST", parametros);
+            cliente.UploadValues(url, "POST", parametros);
             DisplayAlert("Alerta", "Item Insertado", "Cerrar");
             limpiar();
 

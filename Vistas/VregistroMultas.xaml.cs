@@ -101,6 +101,7 @@ public partial class VregistroMultas : ContentPage
     {
         //CargarDatosTipoMultas();
         insertar();
+        limpiar();
     }
     public void insertar()
     {
@@ -233,11 +234,23 @@ public partial class VregistroMultas : ContentPage
                 Foto.Source = ImageSource.FromFile(localFilePath.ToString());
 
                 //Foto.Source(localFilePath.ToString());
-                await DisplayAlert("Respuesta del servidor", localFilePath, "OK");
+                //await DisplayAlert("Respuesta del servidor", localFilePath, "OK");
             }
         }
     }
 
+
+    public void limpiar()
+    {
+        txtNticket.Text = "";
+        txtGps.Text = "";
+        txtPlaca.Text = "";
+        pkTiposMultas.SelectedIndex = -1;
+        Foto.Source = ImageSource.FromFile("carro.jpg");
+
+
+
+    }
 
    
 }
